@@ -13,7 +13,7 @@ public class Wrapper_Autoboxing {
         Integer qtdNotas = LER.nextInt();
 
         for (int i = 0; i < qtdNotas; i++) {
-            System.out.print("Digite a nota " + i +": ");
+            System.out.print("Digite a nota " + i + ": ");
             Double nota = LER.nextDouble();
             listaNotas.add(nota);
         }

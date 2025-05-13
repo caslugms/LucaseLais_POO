@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Tratamento_exceções {
-    public static Scanner LER =new Scanner(System.in);
-    
+    public static Scanner LER = new Scanner(System.in);
+
     public static void main(String[] args) {
 
         Integer numerador;
@@ -15,16 +15,16 @@ public class Tratamento_exceções {
         denominador = LER.nextInt();
 
         try {
-            divisao = numerador/denominador;
+            divisao = numerador / denominador;
             System.out.println("A divisão é: " + divisao);
         } catch (ArithmeticException execao) {
             System.out.println("Impossível dividir por 0");
-        }finally{
+        } finally {
             System.out.println("Digite um denominador diferente de 0.");
             denominador = LER.nextInt();
-            divisao = numerador/denominador;
+            divisao = numerador / denominador;
             System.out.println("Novo resultado: " + divisao);
         }
-        
+
     }
 }
