@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Tratamento_exceções {
     public static Scanner LER = new Scanner(System.in);
-
+//
     public static void main(String[] args) {
 
         Integer numerador;
