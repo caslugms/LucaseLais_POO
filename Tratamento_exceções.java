@@ -1,30 +1,32 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Tratamento_exceções {
+public class Tratamento_exceções{
     public static Scanner LER = new Scanner(System.in);
-//
+
     public static void main(String[] args) {
-
-        Integer numerador;
-        Integer denominador;
-        double divisao;
-
-        System.out.print("Digite o numerador: ");
-        numerador = LER.nextInt();
-        System.out.print("Digite o denominador: ");
-        denominador = LER.nextInt();
-
         try {
-            divisao = numerador / denominador;
-            System.out.println("A divisão é: " + divisao);
-        } catch (ArithmeticException execao) {
-            System.out.println("Impossível dividir por 0");
-        } finally {
-            System.out.println("Digite um denominador diferente de 0.");
-            denominador = LER.nextInt();
-            divisao = numerador / denominador;
-            System.out.println("Novo resultado: " + divisao);
-        }
+            System.out.print("Digite o numerador: ");
+            double numerador = LER.nextDouble();
 
+            System.out.print("Digite o denominador: ");
+            double denominador = LER.nextDouble();
+
+            if (denominador == 0) {
+                throw new ArithmeticException("ERRO: Divisão por zero não pode.");
+            }
+
+            double divisao = numerador / denominador;
+            System.out.println("Resultado da divisão: " + divisao);
+
+        } catch (ArithmeticException execao) {
+            System.out.println("Exceção: " + execao.getMessage());
+        } catch (InputMismatchException execao) {
+            System.out.println("ERRO: Você deve digitar um número válido.");
+        } catch (Exception execao) {
+            System.out.println("ERRO INESPERADO: " + execao.getMessage());
+        } finally {
+            System.out.println("Programa finalizado.");
+        }
     }
-}
+} 
